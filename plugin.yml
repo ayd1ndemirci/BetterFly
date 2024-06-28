@@ -1,0 +1,11 @@
+name: Fly
+main: ayd1ndemirci\Fly\Main
+api: 5.0.0
+version: 1.0
+author: ayd1ndemirci
+
+permissions:
+  fly.command:
+    default: false
+  fly.admin:
+    default: op

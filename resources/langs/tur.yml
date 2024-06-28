@@ -1,0 +1,8 @@
+command-description: "Fly Komutu"
+no-permission: "§cHata: §7Bu komutu kullanma izniniz yok."
+usage-console: "§cKullanım: /fly <oyuncu>"
+player-not-found: "§cHata: §7Oyuncu '{player}' bulunamadı."
+fly-command-on: "§aUçuş modu açıldı!"
+fly-command-off: "§cUçuş modu kapatıldı."
+fly-command-on-other: "§a{player} §auçuş modunu açtı!"
+fly-command-off-other: "§c{player} §cuçuş modunu kapattı."
