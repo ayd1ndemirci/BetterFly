@@ -3,6 +3,7 @@
 namespace ayd1ndemirci\Fly;
 
 use ayd1ndemirci\Fly\command\FlyCommand;
+use ayd1ndemirci\Fly\listener\FlyListener;
 use ayd1ndemirci\Fly\manager\FlyManager;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -23,6 +24,7 @@ class Main extends PluginBase
     {
         FlyManager::init();
         $this->getServer()->getCommandMap()->register("fly", new FlyCommand());
+        $this->getServer()->getPluginManager()->registerEvents(new FlyListener(), $this);
     }
 
     /**
