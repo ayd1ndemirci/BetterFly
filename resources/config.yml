@@ -1,2 +1,8 @@
 #support langs: tur, eng
 language: eng
+
+# List of worlds where flight is disabled for players
+# Players will not be able to use flight abilities in these worlds.
+blacklisted-worlds:
+  - world_nether  # Flight is disabled in the Nether dimension.
+  - world_the_end # Flight is disabled in the End dimension.
