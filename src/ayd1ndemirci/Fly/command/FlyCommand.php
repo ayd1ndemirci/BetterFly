@@ -2,6 +2,7 @@
 
 namespace ayd1ndemirci\Fly\command;
 
+use ayd1ndemirci\Fly\Main;
 use ayd1ndemirci\Fly\manager\FlyManager;
 use pocketmine\command\CommandSender;
 use pocketmine\command\defaults\VanillaCommand;
@@ -62,6 +63,15 @@ class FlyCommand extends VanillaCommand
     protected function toggleFly(CommandSender $sender, Player $target): void
     {
         $isFlying = $target->getAllowFlight();
+
+        $blacklist_worlds = Main::getInstance()->getConfig()->get("blacklisted-worlds", []);
+
+        if (in_array($target->getWorld()->getFolderName(), $blacklist_worlds)) {
+            $target->setFlying(false);
+            $target->setAllowFlight(false);
+            $target->sendMessage(FlyManager::translate("fly-disabled-in-world", ["{world}" => $target->getWorld()->getFolderName()]));
+            return;
+        }
 
         $target->setAllowFlight(!$isFlying);
         $target->setFlying(!$isFlying);
